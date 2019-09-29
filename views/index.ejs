@@ -1,0 +1,19 @@
+<% include header.ejs %>
+<% if (entries.length) { %>
+    <% entries.forEach(element => { %>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="text-muted pull-right">
+                <%= element.published %>
+            </div>
+            <%= element.title %>
+        </div>
+        <div class="panel-body">
+            <%= element.body %>
+        </div>
+      </div>
+    <% });%>
+<% } else { %>
+    No Entries <a href="/new-entry">Add One</a>
+<% } %>
+<% include footer.ejs %>
